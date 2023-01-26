@@ -8,12 +8,14 @@ const Header = () => {
       lg:flex-row 
       "
     >
-      <div
-        className="bg-logo bg-no-repeat border-primary border bg-center rounded-lg h-32 w-28 mt-2
+      <a href="#">
+        <div
+          className="bg-logo bg-no-repeat border-primary border bg-center rounded-lg h-32 w-28 mt-2
       md:
       lg:
       "
-      ></div>
+        ></div>
+      </a>
       <div
         className="text-center cursor-default
       md:
