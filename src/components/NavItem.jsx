@@ -15,7 +15,6 @@ const NavItem = (props) => {
       <a href={props.url}>
         {" "}
         <button
-          data-tooltip-target="tooltip-default"
           type="button"
           className="hover:cursor-pointer uppercase p-2  text-bgc flex items-center justify-center duration-200 text-2xl rounded-lg bg-primary hover:text-text mx-8 
         md:text-4xl md:shadow-lg

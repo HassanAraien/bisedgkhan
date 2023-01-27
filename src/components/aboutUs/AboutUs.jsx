@@ -1,42 +1,48 @@
 import React from "react";
-
+import { AiOutlineHome } from "react-icons/ai";
 const AboutUs = () => {
   const tableOfContent = [
     {
       main: "general",
-      sub1: "who we are",
-      sub2: "what we do",
-      sub3: "our strategy",
-      sub4: "our branches",
-      sub5: "budget",
-      sub6: "future plans",
       mainUrl: "#general",
+      sub1: "who we are",
       sub1Url: "#whoweare",
+      sub2: "what we do",
       sub2Url: "#whatwedo",
+      sub3: "our strategy",
       sub3Url: "#ourstrategy",
+      sub4: "our branches",
       sub4Url: "#ourbranches",
+      sub5: "budget",
       sub5Url: "#budget",
+      sub6: "future plans",
       sub6Url: "#futureplans",
       key: 0,
     },
     {
       main: "managing body",
+      mainUrl: "#managingbody",
       sub1: "organogram",
-      url: "#managinBody",
+      sub1Url: "#organogram",
+
       key: 1,
     },
     {
       main: "meet our team",
+      mainUrl: "#meetourteam",
       sub1: "chair man",
+      sub1Url: "#chairman",
       sub2: "secretary",
-      sub4: "controller",
-      url: "#meetOurTeam",
+      sub2Url: "#secretary",
+      sub3: "controller",
+      sub3Url: "#controller",
       key: 2,
     },
     {
       main: "how we are governed",
+      mainUrl: "#howWeAreGoverned",
       sub1: "rules and regulations",
-      url: "#howWeAreGoverned",
+      sub1Url: "#rulesAndRegulations",
       key: 3,
     },
   ];
@@ -76,13 +82,13 @@ const AboutUs = () => {
      necessary for the purpose of its functions; provided that a post
      in Bs-17 or above, shall be created with a prior approval of the
      Controlling Authority.`,
-      key: 6,
+      key: 7,
     },
     {
       description: `To make provision for buildings premises, furniture, apparatus,
      books and other means required for carrying out the purposes of
      the Act.`,
-      key: 7,
+      key: 8,
     },
   ];
 
@@ -198,49 +204,77 @@ const AboutUs = () => {
   ];
   return (
     <div
-      className="bg-primary p-2
+      className="bg-primary p-2 relative
     "
     >
+      {/* home button */}
+      <a href="#aboutUs" className=" ">
+        <button
+          data-tooltip-target="tooltip-default"
+          type="button"
+          className="hover:cursor-pointer uppercase p-2  text-bgc flex items-center justify-center duration-200 text-2xl rounded-lg bg-primary hover:text-text border-2 shadow-lg drop-shadow-lg fixed bottom-2 left-0
+        md:text-4xl md:shadow-lg
+        lg:flex-col 
+        
+      "
+        >
+          <AiOutlineHome />
+        </button>
+      </a>
       {/* page name */}
-      <p className="uppercase font-semibold p-4 text-text underline text-lg mx-2 cursor-pointer">
+      <p
+        id="aboutUs"
+        className="uppercase font-semibold p-2 text-text underline text-lg mx-2 cursor-pointer
+      md:mx-1
+      "
+      >
         about us
       </p>
       {/* table of content */}
       <div
-        className="uppercase text-sm text-primary   cursor-pointer bg-text shadow-lg
-        md:my-8 md:mx-8 md:rounded-md
+        className="uppercase text-sm text-text  cursor-pointer 
+        md:my-2 md:mx-2 md:text-xl
         lg:mx-32  "
       >
-        <p className="uppercase text-primary cursor-default text-sm font-bold ">
+        <p className="uppercase ml-1  cursor-default text-lg font-bold ">
           Table of content
         </p>
-        <div className="flex capitalize text-xs justify-evenly w-full  ">
+        <div
+          className="flex capitalize text-xs justify-evenly w-full
+         "
+        >
           {tableOfContent.map((txt) => {
             return (
-              <div className="px-1 text-[9px]">
+              <div
+                className=" text-[9px]  text-justify
+              md:text-[14px] md:py-2 "
+              >
                 <a href={txt.mainUrl}>
-                  <div className="font-bold cursor-pointer hover:underline">
+                  <div
+                    className="font-bold mr-1 cursor-pointer hover:underline
+                  md:text-[12px] md:py-2 "
+                  >
                     {txt.main}
                   </div>
                 </a>
                 <div className="">
                   <a href={txt.sub1Url}>
-                    <p className=" hover:underline">{txt.sub1}</p>
+                    <p className=" hover:underline md:py-1">{txt.sub1}</p>
                   </a>
                   <a href={txt.sub2Url}>
-                    <p className=" hover:underline">{txt.sub2}</p>
+                    <p className=" hover:underline md:py-1">{txt.sub2}</p>
                   </a>
                   <a href={txt.sub3Url}>
-                    <p className=" hover:underline">{txt.sub3}</p>
+                    <p className=" hover:underline md:py-1">{txt.sub3}</p>
                   </a>
                   <a href={txt.sub4Url}>
-                    <p className=" hover:underline">{txt.sub4}</p>
+                    <p className=" hover:underline md:py-1">{txt.sub4}</p>
                   </a>
                   <a href={txt.sub5Url}>
-                    <p className=" hover:underline">{txt.sub5}</p>
+                    <p className=" hover:underline md:py-1">{txt.sub5}</p>
                   </a>
                   <a href={txt.sub6Url}>
-                    <p className=" hover:underline">{txt.sub6}</p>
+                    <p className=" hover:underline md:py-1">{txt.sub6}</p>
                   </a>
                 </div>
               </div>
@@ -253,8 +287,8 @@ const AboutUs = () => {
         {/* main heading of section */}
         <p
           id="general"
-          className="uppercase font-bold p-4 text-primary  text-2xl mx-2  text-center cursor-default bg-text shadow-lg
-        md:my-8 md:mx-8 md:rounded-md
+          className="uppercase font-bold p-4 text-primary  text-2xl   text-center cursor-default bg-text shadow-lg
+        md:my-8 md:mx-16 md:rounded-md
         lg:mx-32"
         >
           general
@@ -262,19 +296,22 @@ const AboutUs = () => {
         {/* description who we are */}
         <p
           className=" p-4 m-2 rounded-md cursor-default bg-text shadow-lg 
-          md:mx-16
+          md:mx-4
         
         "
         >
           {/* description main heading */}
           <p
             id="whoweare"
-            className="uppercase font-bold text-lg underline  text-primary
+            className="uppercase text-center font-bold text-lg underline  text-primary
           md:text-center md:text-2xl"
           >
-            introduction to the bise d.g khan
+            who we are
           </p>
           {/* description sub-heading1 */}
+          <p className="uppercase font-bold text-xl text-center tracking-tight text-primary py-4">
+            introduction to the bise d.g khan
+          </p>
           <p className="uppercase font-bold text-xl tracking-tight text-primary py-4">
             creation
           </p>
@@ -334,7 +371,7 @@ Camp Office of DG.Khan board started working in the Multan Board then, it was sh
         {/* description what we do */}
         <p
           className=" p-4 m-2 rounded-md cursor-default bg-text shadow-lg 
-          md:mx-16
+          md:mx-4
         
         "
         >
@@ -374,7 +411,7 @@ Camp Office of DG.Khan board started working in the Multan Board then, it was sh
         {/* description our strategy */}
         <p
           className=" p-4 m-2 rounded-md cursor-default bg-text shadow-lg 
-          md:mx-16
+          md:mx-4
         
         "
         >
@@ -457,7 +494,7 @@ Camp Office of DG.Khan board started working in the Multan Board then, it was sh
         <p
           id="budget"
           className=" p-4 m-2 rounded-md cursor-default bg-text shadow-lg 
-          md:mx-16
+          md:mx-4
         
         "
         >
@@ -469,10 +506,10 @@ Camp Office of DG.Khan board started working in the Multan Board then, it was sh
             budget
           </p>
           {/* description sub-heading1 */}
-          <p className="uppercase font-bold text-xl tracking-tight text-primary py-4 cursor-pointer">
+          <p className="uppercase font-bold text-xl tracking-tight text-primary cursor-pointer hover:underline my-2 w-40">
             budget 2012-17
           </p>
-          <p className="uppercase font-bold text-xl tracking-tight text-primary py-4 cursor-pointer">
+          <p className="uppercase font-bold text-xl tracking-tight text-primary cursor-pointer hover:underline my-2 w-40">
             budget 2017-18
           </p>
         </p>
@@ -481,7 +518,7 @@ Camp Office of DG.Khan board started working in the Multan Board then, it was sh
 
         <p
           className=" p-4 m-2 rounded-md cursor-default bg-text shadow-lg 
-          md:mx-16
+          md:mx-4
         
         "
         >
@@ -505,6 +542,107 @@ Camp Office of DG.Khan board started working in the Multan Board then, it was sh
             asperiores nihil ea eos natus minima necessitatibus, vero magni
             veniam, laudantium molestiae minus ipsam commodi atque laborum
             dolore sunt sequi.
+          </p>
+        </p>
+        {/* managing body */}
+        <p
+          id="managingbody"
+          className="uppercase font-bold p-4 text-primary  text-2xl   text-center cursor-default bg-text shadow-lg
+        md:my-8 md:mx-16 md:rounded-md
+        lg:mx-32"
+        >
+          managing body
+        </p>
+        <p
+          className=" p-4 m-2 rounded-md cursor-default bg-text shadow-lg 
+          md:mx-4
+        
+        "
+        >
+          <p
+            id="organogram"
+            className="uppercase font-bold text-xl tracking-tight text-primary cursor-pointer hover:underline  w-40 my-10 text-center"
+          >
+            organogram
+          </p>
+        </p>
+        {/* meet our team section */}
+        <p
+          id="meetourteam"
+          className="uppercase font-bold p-4 text-primary  text-2xl   text-center cursor-default bg-text shadow-lg
+        md:my-8 md:mx-16 md:rounded-md
+        lg:mx-32"
+        >
+          meet our team
+        </p>
+
+        <p
+          className=" p-4 m-2 rounded-md cursor-default bg-text shadow-lg 
+          md:mx-4
+        
+        "
+        >
+          {/* chairman */}
+          <div
+            id="chairman"
+            className="flex flex-col items-center justify-center shadow-xl rounded-lg bg-primary/20 my-4 py-8"
+          >
+            <div className="w-56 h-56 bg-controllerPic bg-center bg-contain bg-no-repeat shadow-lg  rounded-lg"></div>
+            <p className="py-2 uppercase font-bold text-primary cursor-default">
+              Chairman Board
+            </p>
+            <p className="py-1 capitalize font-semibold text-slate-600 cursor-default text-center">
+              {`Muhammad Khalid Manzoor Commissioner (Addl.Charge)`}
+            </p>
+          </div>
+          {/* secretary */}
+          <div
+            id="secretary"
+            className="flex flex-col items-center justify-center shadow-xl rounded-lg bg-primary/20 my-4 py-8"
+          >
+            <div className="w-56 h-56 bg-controllerPic bg-center bg-contain bg-no-repeat shadow-lg  rounded-lg"></div>
+            <p className="py-2 uppercase font-bold text-primary cursor-default">
+              secretary
+            </p>
+            <p className="py-1 capitalize font-semibold text-slate-600 cursor-default text-center">
+              {`abdul rehman rasheed`}
+            </p>
+          </div>
+          {/* controller */}
+
+          <div
+            id="controller"
+            className="flex flex-col items-center justify-center shadow-xl rounded-lg bg-primary/20 my-4 py-8"
+          >
+            <div className="w-56 h-56 bg-controllerPic bg-center bg-contain bg-no-repeat shadow-lg  rounded-lg"></div>
+            <p className="py-2 uppercase font-bold text-primary cursor-default">
+              controller
+            </p>
+            <p className="py-1 capitalize font-semibold text-slate-600 cursor-default text-center">
+              {`abdul rehman rasheed`}
+            </p>
+          </div>
+        </p>
+        {/* how we are governed */}
+        <p
+          id="howWeAreGoverned"
+          className="uppercase font-bold p-4 text-primary  text-2xl   text-center cursor-default bg-text shadow-lg
+        md:my-8 md:mx-16 md:rounded-md
+        lg:mx-32"
+        >
+          how we are governed
+        </p>
+        <p
+          className=" p-4 m-2 rounded-md cursor-default bg-text shadow-lg 
+          md:mx-4
+        
+        "
+        >
+          <p
+            id="rulesAndRegulations"
+            className="uppercase font-bold text-xl tracking-tight text-primary cursor-pointer hover:underline  w-64  my-10"
+          >
+            rules and regulations
           </p>
         </p>
       </div>

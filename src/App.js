@@ -6,10 +6,6 @@ function App() {
     <div>
       <Header />
       <AboutUs />
-      {/* <Nav2 /> */}
-      {/* <Nav /> */}
-      {/* <Carousel /> */}
-      {/* <Section /> */}
     </div>
   );
 }
